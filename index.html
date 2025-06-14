@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💪 Testosterone Optimisation Guide</title>
+    <style>
+        :root {
+            --bg-dark: #121212;
+            --bg-darker: #0a0a0a;
+            --text-primary: #e0e0e0;
+            --text-secondary: #b0b0b0;
+            --accent-red: #ff2a2a;
+            --accent-red-dark: #cc0000;
+            --accent-red-light: #ff5a5a;
+            --transition-speed: 0.3s;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            border-bottom: 2px solid var(--accent-red);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        h1 {
+            color: var(--accent-red);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 42, 42, 0.3);
+        }
+
+        h2 {
+            color: var(--accent-red);
+            margin: 25px 0 15px;
+            font-size: 1.8rem;
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            transition: all var(--transition-speed) ease;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent-red);
+            transition: width var(--transition-speed) ease;
+        }
+
+        h2:hover::after {
+            width: 100%;
+        }
+
+        h3 {
+            color: var(--accent-red-light);
+            margin: 20px 0 10px;
+            font-size: 1.4rem;
+        }
+      
+      a {
+        color: orange;
+      }
+
+        .section {
+            background-color: var(--bg-darker);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            transition: all var(--transition-speed) ease;
+            overflow: hidden;
+        }
+
+        .section:hover {
+            box-shadow: 0 6px 12px rgba(255, 42, 42, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .section-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height var(--transition-speed) ease-out;
+        }
+
+        .section.active .section-content {
+            max-height: 2000px;
+            transition: max-height 0.6s ease-in;
+        }
+
+        .section.active h2::after {
+            width: 100%;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+            transition: all var(--transition-speed) ease;
+        }
+
+        li::before {
+            content: '•';
+            color: var(--accent-red);
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -3px;
+        }
+
+        li:hover {
+            color: var(--text-primary);
+            transform: translateX(5px);
+        }
+
+        .bold-item {
+            font-weight: bold;
+        }
+
+        .food-group {
+            margin-bottom: 20px;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { 
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .toggle-all {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: var(--accent-red);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all var(--transition-speed) ease;
+            font-weight: bold;
+        }
+
+        .toggle-all:hover {
+            background-color: var(--accent-red-dark);
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .section {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Testosterone Optimisation Guide</h1>
+            <p>Boost your testosterone naturally with these foods and lifestyle changes</p>
+        </header>
+
+        <button class="toggle-all" id="toggleAll">Expand All Sections</button>
+
+        <div class="section" id="section1">
+            <h2>1. Foods That Boost Testosterone</h2>
+            <div class="section-content">
+                <div class="food-group">
+                    <h3>Protein-Rich Foods</h3>
+                    <ul>
+                        <li><span class="bold-item">Eggs</span> (especially yolks, rich in cholesterol, a testosterone precursor)</li>
+                        <li><span class="bold-item">Grass-fed beef</span> (high in zinc and healthy fats)</li>
+                        <li><span class="bold-item">Wild-caught salmon</span> (rich in omega-3s and vitamin D)</li>
+                        <li><span class="bold-item">Chicken & turkey</span> (lean protein sources)</li>
+                    </ul>
+                </div>
+
+                <div class="food-group">
+                    <h3>Healthy Fats</h3>
+                    <ul>
+                        <li><span class="bold-item">Avocados</span> (monounsaturated fats support hormone production)</li>
+                        <li><span class="bold-item">Olive oil & coconut oil</span> (healthy fats for hormone synthesis)</li>
+                        <li><span class="bold-item">Nuts & seeds</span> (almonds, walnuts, pumpkin seeds—high in zinc & magnesium)</li>
+                    </ul>
+                </div>
+
+                <div class="food-group">
+                    <h3>Zinc & Magnesium Sources</h3>
+                    <ul>
+                        <li><span class="bold-item">Oysters</span> (one of the best zinc sources)</li>
+                        <li><span class="bold-item">Pumpkin seeds</span> (high in zinc & magnesium)</li>
+                        <li><span class="bold-item">Spinach & dark leafy greens</span> (magnesium-rich)</li>
+                    </ul>
+                </div>
+
+                <div class="food-group">
+                    <h3>Vitamin D Foods</h3>
+                    <ul>
+                        <li><span class="bold-item">Fatty fish</span> (salmon, sardines, mackerel)</li>
+                        <li><span class="bold-item">Egg yolks</span></li>
+                    </ul>
+                </div>
+
+                <div class="food-group">
+                    <h3>Other Testosterone-Boosting Foods</h3>
+                    <ul>
+                        <li><span class="bold-item">Garlic</span> (contains allicin, which may reduce cortisol)</li>
+                        <li><span class="bold-item">Pomegranates</span> (antioxidants that support testosterone)</li>
+                        <li><span class="bold-item">Ginger</span> (may increase testosterone levels)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="section2">
+            <h2>2. Foods to Avoid (Lower Testosterone)</h2>
+            <div class="section-content">
+                <ul>
+                    <li><span class="bold-item">Processed sugars & refined carbs</span> (spikes insulin, lowers testosterone)</li>
+                    <li><span class="bold-item">Soy products</span> (contains phytoestrogens)</li>
+                    <li><span class="bold-item">Alcohol</span> (lowers testosterone, especially in excess)</li>
+                    <li><span class="bold-item">Trans fats & processed vegetable oils</span> (inflammatory, disrupt hormones)</li>
+                    <li><span class="bold-item">Flaxseeds</span> (high in lignans, which may have estrogenic effects)</li>
+                    <li><span class="bold-item">Licorice root</span> (can lower testosterone)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section" id="section3">
+            <h2>3. Lifestyle Changes to Increase Testosterone</h2>
+            <div class="section-content">
+                <div class="food-group">
+                    <h3>Exercise & Strength Training</h3>
+                    <ul>
+                        <li><span class="bold-item">Lift weights</span> (compound lifts: squats, deadlifts, bench press)</li>
+                        <li><span class="bold-item">High-intensity interval training (HIIT)</span></li>
+                        <li><span class="bold-item">Avoid excessive cardio</span> (long-distance running can lower T)</li>
+                    </ul>
+                </div>
+
+                <div class="food-group">
+                    <h3>Sleep Optimization</h3>
+                    <ul>
+                        <li><span class="bold-item">Aim for 7-9 hours per night</span> (testosterone is produced during deep sleep)</li>
+                        <li><span class="bold-item">Sleep in complete darkness</span> (melatonin supports hormone balance)</li>
+                    </ul>
+                </div>
+
+                <div class="food-group">
+                    <h3>Stress Management</h3>
+                    <ul>
+                        <li><span class="bold-item">Meditation & deep breathing</span> (lowers cortisol, a testosterone killer)</li>
+                        <li><span class="bold-item">Spend time in nature</span> (reduces stress)</li>
+                        <li><span class="bold-item">Limit overworking & chronic stress</span></li>
+                    </ul>
+                </div>
+
+                <div class="food-group">
+                    <h3>Sunlight & Vitamin D</h3>
+                    <ul>
+                        <li><span class="bold-item">Get 15-30 min of sunlight daily</span> (boosts vitamin D, crucial for T)</li>
+                        <li><span class="bold-item">Consider a vitamin D3 supplement</span> (if deficient)</li>
+                    </ul>
+                </div>
+
+                <div class="food-group">
+                    <h3>Avoid Endocrine Disruptors</h3>
+                    <ul>
+                        <li><span class="bold-item">Use BPA-free containers</span> (plastics can mimic estrogen)</li>
+                        <li><span class="bold-item">Choose natural personal care products</span> (avoid parabens & phthalates)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="section4">
+            <h2>4. Additional Testosterone-Boosting Tips</h2>
+            <div class="section-content">
+                <ul>
+                    <li><span class="bold-item">Intermittent fasting</span> (may increase testosterone by improving insulin sensitivity)</li>
+                    <li><span class="bold-item">Cold showers</span> (some evidence suggests they boost T)</li>
+                    <li><span class="bold-item">Limit caffeine late in the day</span> (improves sleep quality)</li>
+                    <li><span class="bold-item">Maintain a healthy weight</span> (obesity lowers testosterone)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Made by <a href="https://linktr.ee/kaywhocreates">Kay</a> 🧡</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.section');
+            const toggleAllBtn = document.getElementById('toggleAll');
+            let allExpanded = false;
+
+            // Add click event to each section header
+            sections.forEach(section => {
+                const header = section.querySelector('h2');
+                header.addEventListener('click', () => {
+                    section.classList.toggle('active');
+                });
+            });
+
+            // Toggle all sections
+            toggleAllBtn.addEventListener('click', () => {
+                allExpanded = !allExpanded;
+                sections.forEach(section => {
+                    if (allExpanded) {
+                        section.classList.add('active');
+                        toggleAllBtn.textContent = 'Collapse All Sections';
+                    } else {
+                        section.classList.remove('active');
+                        toggleAllBtn.textContent = 'Expand All Sections';
+                    }
+                });
+            });
+
+            // Animate sections on load
+            setTimeout(() => {
+                sections.forEach((section, index) => {
+                    setTimeout(() => {
+                        section.style.opacity = 1;
+                        section.style.transform = 'translateY(0)';
+                    }, index * 100);
+                });
+            }, 300);
+        });
+    </script>
+</body>
+</html>
